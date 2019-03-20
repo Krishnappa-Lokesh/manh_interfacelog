@@ -1,0 +1,84 @@
+<mvc:View controllerName="cscintlog.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar">
+	<semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>worklistViewTitle}">
+		<semantic:content>
+			<Table id="table" width="auto" class="sapUiResponsiveMargin" items="{InterfaceRecords}" 
+				noDataText="{worklistView>/tableNoDataText}"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" 
+				growingScrollToLoad="true" updateFinished="onUpdateFinished">
+				<headerToolbar>
+					<Toolbar>
+						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>worklistSearchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<!-- Column headings -->
+					<Column id="nameColumn1" minScreenWidth="Phone" hAlign="Right">
+						<Text text="Amount ABS" id="nameColumnTitle"/>
+					</Column>
+					<Column id="nameColumn11" minScreenWidth="Phone" hAlign="Right" demandPopin="true">
+						<Text text="Quantity ABS" id="nameColumnTitle11"/>
+					</Column>
+					<Column id="nameColumn2" minScreenWidth="Desktop" hAlign="Right" demandPopin="false">
+						<Text text="Stock" id="nameColumnTitle2"/>
+					</Column>
+					<Column id="nameColumn3" minScreenWidth="Desktop" hAlign="Right" demandPopin="false">
+						<Text text="Blocked Stock" id="nameColumnTitle3"/>
+					</Column>
+					<Column id="nameColumn7" minScreenWidth="Tablet" hAlign="Center" demandPopin="false">
+						<Text text="Movement Type" id="nameColumnTitle7"/>
+					</Column>
+					<Column id="nameColumn4" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Material" id="nameColumnTitle4"/>
+					</Column>
+					<Column id="nameColumn5" minScreenWidth="Tablet" demandPopin="false">
+						<Text text="Manufacturer" id="nameColumnTitle5"/>
+					</Column>
+					<Column id="nameColumn6" minScreenWidth="Desktop" demandPopin="false">
+						<Text text="Plant" id="nameColumnTitle6"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="onPress">
+						<cells>
+							<Text id="idZadjAmtAbs" text="{ZadjAmtAbs}"
+									visible="{:= ${ZadjAmtAbs} === 0 ? false : true }"
+								/>
+
+							<ObjectIdentifier title="{ZadjQtyAbs}" text="{ZadjUom}" 
+									class="sapMTableContentMargin"
+									visible="{:= ${ZadjQtyAbs} === 0 ? false : true }"
+									/>
+							<ObjectIdentifier title="{Labst}" text="{Meins}" class="sapMTableContentMargin"/>
+							<ObjectIdentifier title="{Speme}" text="{Meins}" 
+											class="sapMTableContentMargin"
+											visible="{:= ${Speme} === 0 ? false : true }"
+											/>
+							<Text text="{Bwart}" />
+
+							<ObjectIdentifier title="{Material}" text="{Maktx}" class="sapMTableContentMargin"/>
+							<ObjectIdentifier title="{Mfrnr}" text="{Name1}" class="sapMTableContentMargin"/>
+							<Text text="{Werks}" />
+							
+							<!-- These Columns not visible -->					
+							<ObjectIdentifier title="{Mblnr}" text="{Mjahr}" visible="{:= ${Mblnr} === '' ? false : true }"/>
+							<Text text="{Ebeln} / {Ebelp}" visible="{:= ${Ebeln} === '' ? false : true }"/>
+							<Text text="{Vbeln} / {Posnr}" visible="{:= ${Vbeln} === '' ? false : true }"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{worklistView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+	</semantic:FullscreenPage>
+</mvc:View>

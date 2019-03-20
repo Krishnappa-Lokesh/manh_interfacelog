@@ -1,0 +1,87 @@
+<mvc:View xmlns="sap.m" 
+		xmlns:mvc="sap.ui.core.mvc" 
+		xmlns:semantic="sap.m.semantic" 
+		xmlns:footerbar="sap.ushell.ui.footerbar"
+		controllerName="cscintlog.controller.IntStatus">
+	<semantic:FullscreenPage id="page" 
+							navButtonPress="onNavBack" 
+							showNavButton="true" 
+							title="{i18n>intStatusViewTitle}">
+		<semantic:content>
+			<Table id="table" width="auto" class="sapUiResponsiveMargin"
+				items="{ path: '/InterfaceDataSet', sorter: { path: 'ZzIntId', descending: false } }" 
+				noDataText="{intStatusView>/tableNoDataText}"
+				busyIndicatorDelay="{intStatusView>/tableBusyDelay}" 
+				updateFinished="onUpdateFinished">
+				
+				<!--
+				<headerToolbar>
+					<Toolbar>
+						<Title id="tableHeader" text="{intStatusView>/intStatusTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>intStatusSearchTooltip}" search="onSearch" width="auto"/>
+					</Toolbar>
+				</headerToolbar>
+				-->
+				<columns>
+					<Column id="nameColumn0" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Id" id="nameColumnTitle1"/>
+					</Column>
+					<Column id="nameColumn2">
+						<Text text="Interface" id="Tablet"/>
+					</Column>
+
+					<Column id="nameColumn" hAlign="End" minScreenWidth="Tablet" demandPopin="true" >
+						<Text text="Total Records" id="nameColumnTitle"/>
+					</Column>
+					<Column id="nameColumn5" hAlign="End" minScreenWidth="Tablet" demandPopin="true" >
+						<Text text="Error Records" id="nameColumnTitle5"/>
+					</Column>
+					<Column id="nameColumn6" hAlign="End"  minScreenWidth="Phone" demandPopin="true" >
+						<Text text="Documents Posted" id="nameColumnTitle6"/>
+					</Column>
+
+
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="onPress">
+						<cells>
+
+							<ObjectIdentifier text="{ZzIntId}" />
+
+							<Text text="{Zdescription}" wrapping="false"/>
+
+
+							<!--
+								<attributes>
+									<ObjectAttribute text="{ZzIntId}" />
+								</attributes>								
+
+							<ObjectListItem title="{Zdescription}" />>
+							<ObjectIdentifier title="{ZzIntId}" text="{Zdescription}"/>
+							<Text text="{Zservice}" wrapping="false"/>
+							<Text text="{Zfolder}" wrapping="false"/>
+							<ObjectStatus id="__status0" icon="{= ${Zdirection} === 'I' ? 'sap-icon://arrow-left' : 'sap-icon://arrow-right' }"/>
+
+							-->
+
+							<ObjectStatus text="{= parseInt(${ZrecsToday}) }" state="{= ${ZrecsToday} > 0 ? 'Success' : 'Error' }"/>
+							<ObjectStatus text="{= ${ZerecsToday} > 0 ? parseInt(${ZerecsToday}) : '' }" state="{= ${ZerecsToday} > 0 ? 'Error' : 'Success'   }"/>
+							<ObjectStatus text="{= ${ZrecsToday} > 0 ? parseInt(${ZdpToday}) : '' }" state="{= ${ZdpToday} > 0 ? 'Success' : 'Error' }"/>
+							<Text text="{= parseInt(${ZrecsToday}) }"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{intStatusView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+	</semantic:FullscreenPage>
+</mvc:View>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="Z_MH_INTLOG_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="interfacelog" sap:content-version="1">
+				<Key><PropertyRef Name="ZzIntId"/><PropertyRef Name="ZuniqueId"/><PropertyRef Name="ZlineNo"/></Key><Property Name="ZzIntId" Type="Edm.String" Nullable="false" MaxLength="12" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ZuniqueId" Type="Edm.String" Nullable="false" MaxLength="36" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZlineNo" Type="Edm.String" Nullable="false" MaxLength="15" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Bwart" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Posnr" Type="Edm.String" Nullable="false" MaxLength="6" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Mfrpn" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Zwh" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Lgort" Type="Edm.String" Nullable="false" MaxLength="4" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Mfrnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="OldQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Uom" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="OldStatus" Type="Edm.String" Nullable="false" MaxLength="25" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="25" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Mblnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Mjahr" Type="Edm.String" Nullable="false" MaxLength="4" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Zeile" Type="Edm.String" Nullable="false" MaxLength="4" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ZChangedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZChangedOn" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZChangedAt" Type="Edm.Time" Nullable="false" Precision="0" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ZRecordStatus" Type="Edm.String" Nullable="false" MaxLength="50" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Labst" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Speme" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="Verpr" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZadjQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZadjUom" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="ZadjAmt" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZadjAmtAbs" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZadjQtyAbs" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="InterfaceData" sap:content-version="1">
+				<Key><PropertyRef Name="ZzIntId"/></Key><Property Name="ZzIntId" Type="Edm.String" Nullable="false" MaxLength="12" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Zdescription" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Zdirection" Type="Edm.String" Nullable="false" MaxLength="1" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Zfolder" Type="Edm.String" Nullable="false" MaxLength="50" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Zadapter" Type="Edm.String" Nullable="false" MaxLength="50" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Zservice" Type="Edm.String" Nullable="false" MaxLength="50" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ZrecsToday" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZerecsToday" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZdpToday" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><NavigationProperty Name="InterfaceRecords" Relationship="Z_MH_INTLOG_SRV.InterfaceData_to_InterfaceLog"
+					FromRole="FromRole_InterfaceData_to_InterfaceLog" ToRole="ToRole_InterfaceData_to_InterfaceLog"/></EntityType>
+			<Association Name="InterfaceData_to_InterfaceLog" sap:content-version="1"><End Type="Z_MH_INTLOG_SRV.InterfaceData" Multiplicity="1" Role="FromRole_InterfaceData_to_InterfaceLog"/><End Type="Z_MH_INTLOG_SRV.interfacelog" Multiplicity="*" Role="ToRole_InterfaceData_to_InterfaceLog"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_InterfaceData_to_InterfaceLog"><PropertyRef Name="ZzIntId"/></Principal>
+					<Dependent Role="ToRole_InterfaceData_to_InterfaceLog"><PropertyRef Name="ZzIntId"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="Z_MH_INTLOG_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="interfacelogSet" EntityType="Z_MH_INTLOG_SRV.interfacelog" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="InterfaceDataSet" EntityType="Z_MH_INTLOG_SRV.InterfaceData" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="InterfaceData_to_InterfaceLogSet" Association="Z_MH_INTLOG_SRV.InterfaceData_to_InterfaceLog" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="InterfaceDataSet" Role="FromRole_InterfaceData_to_InterfaceLog"/><End EntitySet="interfacelogSet" Role="ToRole_InterfaceData_to_InterfaceLog"/></AssociationSet>
+			</EntityContainer><atom:link rel="self" href="http://d291xgw.hosts.jhmi.edu:8000/sap/opu/odata/sap/Z_MH_INTLOG_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="http://d291xgw.hosts.jhmi.edu:8000/sap/opu/odata/sap/Z_MH_INTLOG_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

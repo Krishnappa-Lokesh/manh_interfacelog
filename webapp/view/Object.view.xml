@@ -1,0 +1,111 @@
+<mvc:View xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.m.semantic" 
+	xmlns:footerbar="sap.ushell.ui.footerbar" 
+	controllerName="cscintlog.controller.Object">
+
+	<semantic:FullscreenPage id="page" navButtonPress="onNavBack" 
+			showNavButton="true" 
+			title="{i18n>objectTitle}" 
+			busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}">
+
+		<semantic:content>
+
+			<VBox width="100%" direction="Column" class="sapUiSmallMargin" id="__vbox1"> 
+				<f:SimpleForm id="SimpleFormDisplay480_12120"
+					editable="false"
+					layout="ResponsiveGridLayout"
+					title="Details"
+					labelSpanXL="4"
+					labelSpanL="4"
+					labelSpanM="12"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="0"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="2"
+					columnsM="2"
+					singleContainerFullSize="false" >
+					<f:content>
+						<core:Title text="Material Info" />
+						<Label text="Material" />
+						<Text text="{Material} : {Maktx}" />
+						<Label text="Mfr. PrtNo" />
+						<Text text="{Mfrpn}" />
+						<Label text="Manufacturer" />
+						<Text text="{Mfrnr} : {Name1}" />
+						<Label text="Plant" />
+						<Text text="{Werks} : {Lgort}" />
+						<Label text="Unrestricted Stock" />
+						<Text text="{Labst}, {Meins}" />
+						<Label text="Blocked Stock" />
+						<Text text="{Speme}, {Meins}" />
+						<Label text="Price in SAP" />
+						<Text text="{Verpr}" />
+
+						<Label text="Record Status in SAP" />
+						<Text text="{ZRecordStatus}" />
+
+						<Label text="Interface ID" />
+						<Text text="{ZzIntId}" />
+
+
+						<core:Title text="Data from SCALE" />
+						<Label text="Warehouse" />
+						<Text text="{Zwh}" />
+						<Label text="Quantity from SCALE" />
+						<Text text="Old: {OldQuantity} New: {Quantity}, {Uom}" />
+						<Label text="Status in Scale" />
+						<Text text="{OldStatus}, {Status}" />
+
+						<Label text="Adjusted Quantity" />
+						<Text text="{ZadjQty}, {ZadjUom}" />
+						<Label text="Adjusted Amount" />
+						<Text text="{ZadjAmt}" />
+
+						<Label text="Absolute Adjusted Quantity" />
+						<Text text="{ZadjQtyAbs}, {ZadjUom}" />
+						<Label text="Absolute Adjusted Amount" />
+						<Text text="{ZadjAmtAbs}" />
+
+						<core:Title text="Transactions in SAP" />
+						<Label text="Purchase Order" />
+						<Text text="{Ebeln}, {Ebelp}" />
+						<Label text="A S Notification" />
+						<Text text="{Vbeln}, {Posnr}" />
+
+						<Label text="Movement Type" />
+						<Text text="{Bwart}" />
+						<Label text="Material Document" />
+						<Text text="{Mblnr}, {Mjahr}  {Zeile}" />
+
+						<Label text="Record time stamp" />
+						<Text text="{ZChangedBy} {ZChangedOn} {ZChangedAt}" />
+
+
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+				
+ 		</semantic:content>
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{objectView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+
+	</semantic:FullscreenPage>
+
+</mvc:View>
